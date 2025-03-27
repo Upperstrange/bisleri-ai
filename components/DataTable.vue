@@ -79,34 +79,44 @@ const downloadData = async () => {
                     </button>
                 </div>
             </CardHeader>
+            <div class="overflow-x-auto ">
+                <table
+                    class="min-w-full border-separate border-spacing-0 rounded-xl shadow-sm overflow-hidden bg-white">
+                    <thead>
+                        <tr class="text-gray-700">
+                            <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-gray-100">Timestamp</th>
+                            <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-blue-50">pH</th>
+                            <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-orange-50">Turbidity (NTU)
+                            </th>
+                            <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-yellow-50">TDS (ppm)</th>
+                            <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-green-50">Temperature (°C)
+                            </th>
+                            <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-purple-50">Conductivity
+                                (μS/cm)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="reading in sensorData" :key="reading.id"
+                            class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
+                            <td class="p-4 text-gray-600 bg-gray-50/50 text-center">{{ reading.timestamp }}</td>
+                            <td class="p-4 text-blue-600 bg-blue-50/50 text-center">{{ reading.ph.toFixed(2) }}</td>
+                            <td class="p-4 text-orange-600 bg-orange-50/50 text-center">{{ reading.turbidity.toFixed(2)
+                                }}
+                            </td>
+                            <td class="p-4 text-yellow-600 bg-yellow-50/50 text-center">{{ reading.tds.toFixed(2) }}
+                            </td>
+                            <td class="p-4 text-green-600 bg-green-50/50 text-center">{{ reading.temperature.toFixed(2)
+                                }}
+                            </td>
+                            <td class="p-4 text-purple-600 bg-purple-50/50 text-center">{{
+                                reading.conductivity.toFixed(2)
+                                }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <table class="min-w-full border-separate border-spacing-0 rounded-xl shadow-sm overflow-hidden bg-white">
-                <thead>
-                    <tr class="text-gray-700">
-                        <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-gray-100">Timestamp</th>
-                        <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-blue-50">pH</th>
-                        <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-orange-50">Turbidity (NTU)</th>
-                        <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-yellow-50">TDS (ppm)</th>
-                        <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-green-50">Temperature (°C)</th>
-                        <th class="p-4 font-semibold text-sm uppercase tracking-wide bg-purple-50">Conductivity (μS/cm)
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="reading in sensorData" :key="reading.id"
-                        class="border-t border-gray-200 hover:bg-gray-50 transition-colors">
-                        <td class="p-4 text-gray-600 bg-gray-50/50 text-center">{{ reading.timestamp }}</td>
-                        <td class="p-4 text-blue-600 bg-blue-50/50 text-center">{{ reading.ph.toFixed(2) }}</td>
-                        <td class="p-4 text-orange-600 bg-orange-50/50 text-center">{{ reading.turbidity.toFixed(2) }}
-                        </td>
-                        <td class="p-4 text-yellow-600 bg-yellow-50/50 text-center">{{ reading.tds.toFixed(2) }}</td>
-                        <td class="p-4 text-green-600 bg-green-50/50 text-center">{{ reading.temperature.toFixed(2) }}
-                        </td>
-                        <td class="p-4 text-purple-600 bg-purple-50/50 text-center">{{ reading.conductivity.toFixed(2)
-                        }}</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
     <!-- <Card class="w-[80%]">
