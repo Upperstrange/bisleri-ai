@@ -8,11 +8,13 @@ import Map from '~/components/Map.vue';
 import CorrosionRiskAssessment from '~/components/CorrosionRiskAssessment.vue';
 import WaterQualityClassification from '~/components/WaterQualityClassification.vue';
 
+const configs = useRuntimeConfig()
+
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
-    projectId: process.env.VITE_FIREBASE_PROJECT_ID,
+    apiKey: configs.public.firebaseApiKey,
+    databaseURL: configs.public.firebaseDatabaseUrl,
+    projectId: configs.public.firebaseProjectId,
 };
 
 // Initialize Firebase
