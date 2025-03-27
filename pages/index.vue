@@ -12,7 +12,7 @@ import WaterQualityClassification from '~/components/WaterQualityClassification.
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
     databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    projectId: process.env.VITE_FIREBASE_PROJECT_ID,
 };
 
 // Initialize Firebase
