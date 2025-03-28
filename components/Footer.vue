@@ -32,11 +32,7 @@
                 </div>
 
                 <!-- Copyright Section -->
-                <div class="mt-6">
-                    <p class="text-xs text-zinc-500">
-                        © 2025 BisleriAI. All rights reserved (of Samrat's mum)
-                    </p>
-                </div>
+                
             </div>
         </div>
     </footer>
